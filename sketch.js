@@ -5,7 +5,7 @@ let board = [];
 let pieceSize;
 let draggingPiece = null;
 let offsetX, offsetY;
-let nextPageURL = 'https://example.com/next';
+let nextPageURL = 'https://xiaotian0722.github.io/Balloon/';
 let startButton, nextButton, cueButton;
 let showCue = false;
 
