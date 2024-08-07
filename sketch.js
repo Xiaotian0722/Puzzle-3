@@ -10,7 +10,7 @@ let startButton, nextButton, cueButton;
 let showCue = false;
 
 function preload() {
-  img = loadImage('pic/bg.webp');
+  img = loadImage('pic/bg.png');
   puz = loadImage('pic/puzzle2.jpg');
 }
 
@@ -39,7 +39,7 @@ function setup() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   adjustPieces(); // Adjust pieces to fit the new canvas size
-  startButton.position(width / 2 - 50, height / 2 + 100);
+  startButton.position(width / 2 - 50, height / 2 + 150);
   nextButton.position(width / 2 - 50, height - 75);
   cueButton.position(width - 100, 50);
 }
@@ -72,12 +72,13 @@ function toggleCue() {
 function draw() {
   background(255);
   if (state === 'start') {
-    image(img, 25, height / 2, 150, 300);
+    image(img, 25, height / 2, 300, 300);
     textSize(24);
     fill(0);
     textAlign(CENTER, CENTER);
     text('This is the last one you need to get!', width / 2, height / 2 - 50);
     text('Drag the pieces and release with mouse.', width / 2, height / 2 + 25);
+    text('Time is unlimited. You can enjoy solving all the mysteries!', width / 2, height / 2 + 100);
   } else if (state === 'game') {
     if (showCue) {
       image(puz, width / 2 - pieceSize * 2, height / 2 - pieceSize * 2, pieceSize * 4, pieceSize * 4);
